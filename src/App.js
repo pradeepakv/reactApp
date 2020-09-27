@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import NestedComp from './NestedComp';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  state = {
+    nestedComp:[
+      {name: "meena", age: 32, id:1},
+      {name: "ryu", age: 33, id:2}
+    ]
+    
+  }
+
+  render(){
+    return (
+    <div  className="App">
+      <h1>My first React APP!</h1>
+      <NestedComp nestedComp = {this.state.nestedComp}/>
     </div>
-  );
+   );
+  }
+  
 }
 
 export default App;
